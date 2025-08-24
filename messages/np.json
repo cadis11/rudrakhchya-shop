@@ -1,0 +1,27 @@
+{
+  "site": {
+    "title": "रुद्राक्ष्य — नेपालबाट प्रामाणिक रुद्राक्ष",
+    "shopNow": "किन्नुहोस्",
+    "xrayCertified": "एक्स‑रे प्रमाणित",
+    "activationVideo": "सक्रियता भिडियो (खरिदपछि)",
+    "shipsWorldwide": "विश्वभर डेलिभरी"
+  },
+  "nav": {
+    "shop": "किनमेल",
+    "learn": "जानकारी",
+    "blog": "ब्लग",
+    "about": "हाम्रो बारे",
+    "contact": "सम्पर्क",
+    "policies": "नियमहरू",
+    "certs": "प्रमाणपत्र र सक्रियता"
+  },
+  "product": {
+    "activationAfterPurchase": "खरिदपछि सक्रियता",
+    "xrayPublic": "सार्वजनिक एक्स‑रे रिपोर्ट",
+    "priceNPR": "मूल्य (रु)",
+    "priceUSD": "मूल्य (USD)",
+    "addToCart": "कार्टमा हाल्नुहोस्",
+    "inStock": "उपलब्ध",
+    "outOfStock": "स्टक सकियो"
+  }
+}

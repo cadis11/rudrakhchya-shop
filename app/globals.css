@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground: 20 20 20;
+  --background: 255 255 255;
+}
+
+body { @apply bg-white text-neutral-900; }
+
+.container { @apply max-w-6xl mx-auto px-4; }
+
+.btn { @apply inline-flex items-center gap-2 rounded-2xl px-4 py-2 font-medium shadow-sm transition; }
+.btn-primary { @apply bg-brand-primary text-white hover:brightness-110; }
+.badge { @apply rounded-full text-xs px-2.5 py-1 bg-emerald-100 text-emerald-800; }
+.card { @apply rounded-3xl border border-neutral-200 shadow-sm; }

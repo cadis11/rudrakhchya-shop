@@ -1,0 +1,87 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  name      String?
+  email     String   @unique
+  phone     String?
+  role      Role     @default(CUSTOMER)
+  password  String?
+  orders    Order[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+enum Role {
+  ADMIN
+  CUSTOMER
+}
+
+model Order {
+  id          String      @id @default(cuid())
+  status      OrderStatus @default(PENDING_PAYMENT)
+  currency    String
+  total       Int         // amount in smallest unit (paisa / cents)
+  user        User        @relation(fields: [userId], references: [id])
+  userId      String
+  items       OrderItem[]
+  payment     Payment?
+  activation  Activation?
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+}
+
+enum OrderStatus {
+  PENDING_PAYMENT
+  PAID
+  ACTIVATED
+  COMPLETED
+}
+
+model OrderItem {
+  id         String @id @default(cuid())
+  order      Order  @relation(fields: [orderId], references: [id])
+  orderId    String
+  productId  String // mirrors Sanity _id
+  title      String
+  price      Int    // locked price in smallest unit
+  qty        Int
+  snapshot   Json
+}
+
+model Payment {
+  id        String   @id @default(cuid())
+  provider  String
+  ref       String?
+  status    String
+  meta      Json?
+  order     Order    @relation(fields: [orderId], references: [id])
+  orderId   String   @unique
+  createdAt DateTime @default(now())
+}
+
+model Activation {
+  id           String   @id @default(cuid())
+  order        Order    @relation(fields: [orderId], references: [id])
+  orderId      String   @unique
+  s3VideoKey   String
+  expiresAt    DateTime?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model AuditLog {
+  id        String   @id @default(cuid())
+  actorId   String?
+  action    String
+  targetId  String?
+  meta      Json?
+  createdAt DateTime @default(now())
+}

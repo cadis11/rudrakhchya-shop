@@ -1,0 +1,27 @@
+{
+  "site": {
+    "title": "Rudrakhchya — Authentic Rudraksha from Nepal",
+    "shopNow": "Shop Now",
+    "xrayCertified": "X‑ray Certified",
+    "activationVideo": "Activation video (post‑purchase)",
+    "shipsWorldwide": "Ships Worldwide"
+  },
+  "nav": {
+    "shop": "Shop",
+    "learn": "Learn",
+    "blog": "Blog",
+    "about": "About",
+    "contact": "Contact",
+    "policies": "Policies",
+    "certs": "Certificates & Activation"
+  },
+  "product": {
+    "activationAfterPurchase": "Activation after purchase",
+    "xrayPublic": "Public X‑ray report",
+    "priceNPR": "Price (NPR)",
+    "priceUSD": "Price (USD)",
+    "addToCart": "Add to Cart",
+    "inStock": "In stock",
+    "outOfStock": "Out of stock"
+  }
+}
