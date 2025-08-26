@@ -1,5 +1,3 @@
 import { redirect } from 'next/navigation';
-
-export default function Root() {
-  redirect('/en');
-}
+export const dynamic = 'force-dynamic';
+export default function RootRedirect(){ redirect('/en'); }

@@ -1,9 +1,11 @@
-import React from 'react';
+export const dynamic = 'force-dynamic';
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({children}:{children:React.ReactNode}) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body style={{fontFamily:'system-ui, Arial, sans-serif', margin:0}}>
+        {children}
+      </body>
     </html>
   );
 }
